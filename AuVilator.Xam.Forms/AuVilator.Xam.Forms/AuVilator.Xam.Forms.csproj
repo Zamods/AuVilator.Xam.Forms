@@ -1,0 +1,72 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Support\UX\EnumBindingSourceExtension.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\Logo.png" />
+    <None Remove="Assets\NavBar\Back.png" />
+    <None Remove="Assets\NavBar\Exit.png" />
+    <None Remove="Assets\NavBar\Front.png" />
+    <None Remove="Assets\NavBar\Settings.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Assets\Logo.png" />
+    <Content Include="Assets\NavBar\Back.png" />
+    <Content Include="Assets\NavBar\Exit.png" />
+    <Content Include="Assets\NavBar\Front.png" />
+    <Content Include="Assets\NavBar\Settings.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1560" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.0-pre3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\AuVilator.Library\AuVilator.Library\AuVilator.Library.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Localization\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Controls\FlatIconButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Controls\NavPageFooterControl.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Controls\NavPageTopBar.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Localization\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Page\SettingsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Page\SilencerPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

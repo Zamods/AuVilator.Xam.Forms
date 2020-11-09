@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:convert="clr-namespace:AuVilator.Xam.Forms.Converters" 
+             xmlns:controls="clr-namespace:AuVilator.Xam.Forms.Controls"
+             xmlns:p="clr-namespace:AuVilator.Xam.Forms.Localization"
+             x:Class="AuVilator.Xam.Forms.Page.SilencerPage"
+             Visual="Material">
+    <ContentPage.Resources>
+        <convert:ComboBoxToStringConverter x:Key="ComboBoxToStringConverter"></convert:ComboBoxToStringConverter>
+        <convert:IntToEnumConverter x:Key="IntToEnumConverter"></convert:IntToEnumConverter>
+        <convert:EmptyStringConverter x:Key="EmptyStringConverter"></convert:EmptyStringConverter>
+        <convert:IntToStringConverter x:Key="IntToStringConverter"></convert:IntToStringConverter>
+        <convert:StringToIntConverter x:Key="StringToIntConverter"></convert:StringToIntConverter>
+        <Style x:Key="InputTextBox" TargetType="Entry">
+            <Setter Property="BackgroundColor" Value="White"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+            <Setter Property="ClearButtonVisibility" Value="WhileEditing"/>
+            <Setter Property="Keyboard" Value="Numeric"/>
+            <Setter Property="HeightRequest" Value="40"/>
+        </Style>
+        <Style x:Key="HeadingTextBlock" TargetType="Label">
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+            <Setter Property="Padding" Value="12,0,0,0"/>
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="HorizontalOptions" Value="StartAndExpand"/>
+            <Setter Property="VerticalTextAlignment" Value="Center"/>
+        </Style>
+        <Style x:Key="LabelTextBlock" TargetType="Label">
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            <Setter Property="VerticalTextAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="5,0,5,0"/>
+        </Style>
+        <Style x:Key="BackGroundRectangle" TargetType="BoxView">
+            <Setter Property="BackgroundColor" Value="BlueViolet"/>
+            <Setter Property="CornerRadius" Value="20"/>
+        </Style>
+        <Style x:Key="InputComboBox" TargetType="Picker">
+            <Setter Property="WidthRequest" Value="430" />
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="BackgroundColor" Value="White"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+        </Style>
+        <Style x:Key="SelectorSlider" TargetType="Stepper">
+            <Setter Property="Increment" Value="0.1"/>
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+            <Setter Property="HeightRequest" Value="40" />
+            <Setter Property="Maximum" Value="30"/>
+            <Setter Property="Minimum" Value="-30"/>
+            <Setter Property="BackgroundColor" Value="BlueViolet"/>
+        </Style>
+        <Style x:Key="InformationTitleTextBlock" TargetType="Label">
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="VerticalTextAlignment" Value="Center"/>
+            <Setter Property="VerticalOptions" Value="Start"/>
+            <Setter Property="Padding" Value="6"/>
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="BackgroundColor" Value="BlueViolet"/>
+            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            <Setter Property="HeightRequest" Value="40"/>
+        </Style>
+        <Style x:Key="InformationContentTextBlock" TargetType="Label">
+            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            <Setter Property="TextType" Value="Text"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="VerticalTextAlignment" Value="Center"/>
+            <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+            <Setter Property="WidthRequest" Value="430"/>
+        </Style>
+        <Style x:Key="InformationCloseButton" TargetType="Button">
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="VerticalOptions" Value="End"/>
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="BackgroundColor" Value="DarkCyan"/>
+            <Setter Property="HeightRequest" Value="40"/>
+        </Style>
+        <Style x:Key="InformationPanel" TargetType="StackLayout">
+            <Setter Property="IsVisible" Value="false"/>
+            <Setter Property="BackgroundColor" Value="LightBlue"/>
+        </Style>
+        <Style x:Key="InformationIcon" TargetType="Image">
+            <Setter Property="Aspect" Value="AspectFit"/>
+            <Setter Property="HeightRequest" Value="20"/>
+            <Setter Property="WidthRequest" Value="20"/>
+            <Setter Property="Margin" Value="0,0,10,0"/>
+        </Style>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid x:Name="mainPage">
+            <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="20"/>
+            </Grid.ColumnDefinitions>
+            <controls:NavPageTopBar Grid.Row="0" Grid.ColumnSpan="4"/>
+            <!--<control:NavPageBarControl NavBarTitle="{Binding Textee}" NextNavBtnCommand="{Binding GotoPage2Command}" BackNavBtnCommand="{Binding ChangeText}" Grid.Row="0"/>-->
+        <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="{x:Static p:Resources.AuVilator_Welcome}" FontSize="26" VerticalOptions="Center" />
+            <Image Grid.Row="1" Grid.Column="3" Source="Settings.png" Aspect="AspectFit" HeightRequest="30" WidthRequest="30" Margin="-10,0,-10,0" TranslationX="-20">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding OpenSettings}"/>
+                </Image.GestureRecognizers>
+            </Image>
+            <ScrollView Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3">
+                <Grid HorizontalOptions="CenterAndExpand" Margin="-20,0,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <!-- 0 -->
+                        <RowDefinition Height="40"/>
+                        <!-- 1 -->
+                        <RowDefinition Height="40"/>
+                        <!-- 2 -->
+                        <RowDefinition Height="Auto"/>
+                        <!-- 3 Information -->
+                        <RowDefinition Height="40"/>
+                        <!-- 4 Spacer -->
+                        <RowDefinition Height="40"/>
+                        <!-- 5 -->
+                        <RowDefinition Height="40"/>
+                        <!-- 6 -->
+                        <RowDefinition Height="40"/>
+                        <!-- 7 -->
+                        <RowDefinition Height="Auto"/>
+                        <!-- 8 Information -->
+                        <RowDefinition Height="40"/>
+                        <!-- 9 Spacer-->
+                        <RowDefinition Height="40"/>
+                        <!-- 10 -->
+                        <RowDefinition Height="40"/>
+                        <!-- 11 -->
+                        <RowDefinition Height="40"/>
+                        <!-- 12 -->
+                        <RowDefinition Height="Auto"/>
+                        <!-- 13 Information -->
+                        <RowDefinition Height="40"/>
+                        <!-- 14 Spacer-->
+                        <RowDefinition Height="40"/>
+                        <!-- 15 -->
+                        <RowDefinition Height="40"/>
+                        <!-- 16 -->
+                        <RowDefinition Height="40"/>
+                        <!-- 17 -->
+                        <RowDefinition Height="Auto"/>
+                        <!-- 18 Information -->
+                        <RowDefinition Height="40"/>
+                        <!-- 19 Spacer-->
+                        <RowDefinition Height="40"/>
+                        <!-- 20 -->
+                        <RowDefinition Height="40"/>
+                        <!-- 21 Spacer -->
+                        <RowDefinition Height="40"/>
+                        <!-- 22 -->
+                        <RowDefinition Height="40"/>
+                        <!-- 23 Spacer -->
+                        <RowDefinition Height="40"/>
+                        <!-- 24 -->
+                        <RowDefinition Height="40"/>
+                        <!-- 25 Spacer -->
+                    </Grid.RowDefinitions>
+                    <!-- File Selection Control Rows 0->2 -->
+                    <BoxView Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Style="{StaticResource BackGroundRectangle}"/>
+                    <StackLayout Grid.Row="0" Orientation="Horizontal">
+                        <Label Text="{x:Static p:Resources.FileSelectionTitleText}" Style="{StaticResource HeadingTextBlock}" />
+                        <Image Source="Information.png" Style="{x:StaticResource InformationIcon}" >
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="FileSelectionInformationButtonClicked"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </StackLayout>
+                    <Label Grid.Row="1" x:Name="fileSelectTextBox" Text="{Binding SelectedFileName, Converter={StaticResource EmptyStringConverter}, ConverterParameter={x:Static p:Resources.NoFileSelected}}"
+                     Style="{StaticResource InputTextBox}"/>
+                    <Button Grid.Row="2" Text="{x:Static p:Resources.FileSelectionButtonText}" TextColor="White" BackgroundColor="BlueViolet" HorizontalOptions="Center" Margin="0,-5,0,0" Command="{Binding GetFiles}"/>
+                    <!-- Information Panel Row 3 -->
+                    <StackLayout Grid.Row="3" x:Name="fileSelectInformationSP" Style="{StaticResource InformationPanel}">
+                        <Label Text="{x:Static p:Resources.InformationTitleText}" Style="{StaticResource InformationTitleTextBlock}"/>
+                        <Label Text="{x:Static p:Resources.SelectFileInformationText}" Style="{StaticResource InformationContentTextBlock}"/>
+                        <Button Text="{x:Static p:Resources.InformationCloseButtonText}" Clicked="FileSelectionInformationButtonClicked" Style="{StaticResource InformationCloseButton}"/>
+                    </StackLayout>
+                    <!-- Bin Size Selection 5->7  -->
+                    <BoxView Grid.Row="5" Grid.RowSpan="3" Style="{StaticResource BackGroundRectangle}"/>
+                    <StackLayout Grid.Row="5" Orientation="Horizontal" >
+                        <Label Text="{x:Static p:Resources.BinSizeSelectionTitleText}" Style="{StaticResource HeadingTextBlock}" />
+                        <Image Source="Information.png" Style="{x:StaticResource InformationIcon}">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="BinSizeSelectionInformationButtonClicked"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </StackLayout>
+                    <Picker Grid.Row="6" x:Name="binSizeComboBox" Title="{x:Static p:Resources.BinSizePickerText}" SelectedItem="{Binding BinSize, Mode=TwoWay, Converter={StaticResource StringToIntConverter}}" 
+                      Style="{StaticResource InputComboBox}">
+                        <Picker.Items>
+                            <x:String>256</x:String>
+                            <x:String>512</x:String>
+                            <x:String>1024</x:String>
+                            <x:String>2048</x:String>
+                            <x:String>4096</x:String>
+                            <x:String>8192</x:String>
+                            <x:String>16284</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <Label Grid.Row="7" Text="{Binding SelectedItem, Mode=OneWay , Source={x:Reference binSizeComboBox}, Converter={StaticResource ComboBoxToStringConverter}, ConverterParameter={x:Static p:Resources.BinSizeSelectedLabelText}}"
+                           Style="{StaticResource LabelTextBlock}" FontAttributes="Bold" Margin="0,-5,0,0" />
+                    <!-- Information Panel Row 8 -->
+                    <StackLayout Grid.Row="8" x:Name="binSizeSelectionInformationSP" Style="{StaticResource InformationPanel}">
+                        <Label Text="{x:Static p:Resources.InformationTitleText}" Style="{StaticResource InformationTitleTextBlock}"/>
+                        <Label Text="{x:Static p:Resources.BinSizeSelectionInformationText}" Style="{StaticResource InformationContentTextBlock}"/>
+                        <Button Text="{x:Static p:Resources.InformationCloseButtonText}" Clicked="BinSizeSelectionInformationButtonClicked" Style="{StaticResource InformationCloseButton}"/>
+                    </StackLayout>
+                    <!-- Start Point Selection 10->12 -->
+                    <BoxView Grid.Row="10" Grid.RowSpan="3" Style="{StaticResource BackGroundRectangle}"/>
+                    <StackLayout Grid.Row="10" Orientation="Horizontal" >
+                        <Label Text="{x:Static p:Resources.StartAmpPosSelectionTitleText}" Style="{StaticResource HeadingTextBlock}" />
+                        <Image Source="Information.png" Style="{x:StaticResource InformationIcon}">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="StartAmpPosInformationButtonClicked"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </StackLayout>
+                    <Entry Grid.Row="11" x:Name="ampStartPosTextBox" Text="{Binding Value, Mode=TwoWay, Source={x:Reference ampStartPosSlider}}" Style="{StaticResource InputTextBox}"/>
+                    <StackLayout Orientation="Horizontal" Grid.Row="12" VerticalOptions="Center" Margin="0,-5,0,0">
+                        <Label Text="-30" Style="{StaticResource LabelTextBlock}" Margin="10,0,0,0"/>
+                        <Stepper x:Name="ampStartPosSlider" Value="{Binding StartPositionAmplitude}" Style="{StaticResource SelectorSlider}"/>
+                        <Label Text="{Binding Maximum, Mode=OneTime,  Source={x:Reference ampStartPosSlider}}" Style="{StaticResource LabelTextBlock}" Margin="0,0,10,0" />
+                    </StackLayout>
+                    <!-- Information Panel Row 13 -->
+                    <StackLayout Grid.Row="13" x:Name="startAmpPosInformationSP" Style="{StaticResource InformationPanel}">
+                        <Label Text="{x:Static p:Resources.InformationTitleText}" Style="{StaticResource InformationTitleTextBlock}"/>
+                        <Label Text="{x:Static p:Resources.StartAmpPosInformationText}" Style="{StaticResource InformationContentTextBlock}"/>
+                        <Button Text="{x:Static p:Resources.InformationCloseButtonText}" Clicked="StartAmpPosInformationButtonClicked" Style="{StaticResource InformationCloseButton}"/>
+                    </StackLayout>
+                    <!-- End Point Selection 15->17 -->
+                    <BoxView Grid.Row="15" Grid.RowSpan="3" Style="{StaticResource BackGroundRectangle}"/>
+                    <StackLayout Grid.Row="15" Orientation="Horizontal" >
+                        <Label Text="{x:Static p:Resources.EndAmpPosSelectionTitleText}" Style="{StaticResource HeadingTextBlock}" />
+                        <Image Source="Information.png" Style="{x:StaticResource InformationIcon}" >
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="EndAmpPosInformationButtonClicked"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </StackLayout>
+                    <Entry Grid.Row="16"  x:Name="ampEndPosTextBox" Text="{Binding Value, Mode=TwoWay, Source={x:Reference ampEndPosSlider}}" Style="{StaticResource InputTextBox}" />
+                    <StackLayout Orientation="Horizontal" Grid.Row="17" VerticalOptions="Center" Margin="0,-5,0,0">
+                        <Label Text="-30" Style="{StaticResource LabelTextBlock}" Margin="10,0,0,0"/>
+                        <Stepper x:Name="ampEndPosSlider" Value="{Binding EndPositionAmplitude}" Style="{StaticResource SelectorSlider}"/>
+                        <Label Text="{Binding Maximum, Mode=OneTime, Source={x:Reference ampEndPosSlider}}" Style="{StaticResource LabelTextBlock}" Margin="0,0,10,0"/>
+                    </StackLayout>
+                    <!-- Information Panel Row 18 -->
+                    <StackLayout Grid.Row="18" x:Name="endAmpPosInformationSP" Style="{StaticResource InformationPanel}">
+                        <Label Text="{x:Static p:Resources.InformationTitleText}" Style="{StaticResource InformationTitleTextBlock}"/>
+                        <Label Text="{x:Static p:Resources.EndAmpPosInformationText}" Style="{StaticResource InformationContentTextBlock}"/>
+                        <Button Text="{x:Static p:Resources.InformationCloseButtonText}" Clicked="EndAmpPosInformationButtonClicked" Style="{StaticResource InformationCloseButton}"/>
+                    </StackLayout>
+                    <!-- Buttons 20 -->
+                    <StackLayout Grid.Row="20" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                        <Button Text="{x:Static p:Resources.RunSilencerButtonText}" Margin="-5,0,25,0" IsEnabled="{Binding IsFileLoaded}" Command="{Binding RunSilencer}"/>
+                        <Button Text="{x:Static p:Resources.Silencer_V_Cancel_Btn}" Margin="25,0,-5,0" IsEnabled="{Binding IsRunning}" Command="{Binding AbortSilencer}"/>
+                    </StackLayout>
+                    <!-- Label 22 -->
+                    <Label x:Name="progressText" Grid.Row="22" Style="{StaticResource LabelTextBlock}" TextColor="BlueViolet" />
+                    <!-- Progress Bar 24 -->
+                    <ProgressBar x:Name="progressBar" Grid.Row="24" HeightRequest="40" WidthRequest="150" />
+                </Grid>
+            </ScrollView>
+        <Image Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" Source="Logo.png" HeightRequest="100" Opacity="0.3" VerticalOptions="End" HorizontalOptions="End" Margin="20"/>
+        <controls:NavPageFooterControl Grid.Row="5" Grid.ColumnSpan="4"/>
+    </Grid>
+    </ContentPage.Content>
+</ContentPage>
