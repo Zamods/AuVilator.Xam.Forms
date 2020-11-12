@@ -38,7 +38,7 @@
             <Setter Property="CornerRadius" Value="20"/>
         </Style>
         <Style x:Key="InputComboBox" TargetType="Picker">
-            <Setter Property="WidthRequest" Value="430" />
+            <Setter Property="WidthRequest" Value="372" />
             <Setter Property="HorizontalOptions" Value="Center"/>
             <Setter Property="BackgroundColor" Value="White"/>
             <Setter Property="VerticalOptions" Value="Center"/>
@@ -67,7 +67,7 @@
             <Setter Property="Padding" Value="5"/>
             <Setter Property="VerticalTextAlignment" Value="Center"/>
             <Setter Property="VerticalOptions" Value="FillAndExpand"/>
-            <Setter Property="WidthRequest" Value="430"/>
+            <Setter Property="WidthRequest" Value="372"/>
         </Style>
         <Style x:Key="InformationCloseButton" TargetType="Button">
             <Setter Property="FontAttributes" Value="Bold"/>
@@ -98,14 +98,14 @@
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="10"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="10"/>
             </Grid.ColumnDefinitions>
             <controls:NavPageTopBar Grid.Row="0" Grid.ColumnSpan="4"/>
             <!--<control:NavPageBarControl NavBarTitle="{Binding Textee}" NextNavBtnCommand="{Binding GotoPage2Command}" BackNavBtnCommand="{Binding ChangeText}" Grid.Row="0"/>-->
-        <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="{x:Static p:Resources.AuVilator_Welcome}" FontSize="26" VerticalOptions="Center" />
+        <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="{x:Static p:Resources.AuVilator_Welcome}" FontSize="Title" VerticalOptions="Center" />
             <Image Grid.Row="1" Grid.Column="3" Source="Settings.png" Aspect="AspectFit" HeightRequest="30" WidthRequest="30" Margin="-10,0,-10,0" TranslationX="-20">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding OpenSettings}"/>

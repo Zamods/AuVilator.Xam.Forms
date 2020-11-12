@@ -21,7 +21,7 @@
             <Setter Property="Padding" Value="12,0,0,0"/>
             <Setter Property="TextColor" Value="White"/>
             <Setter Property="HorizontalTextAlignment" Value="Start"/>
-            <Setter Property="WidthRequest" Value="140" />
+            <Setter Property="WidthRequest" Value="110" />
         </Style>
         <Style x:Key="BackGroundRectangle" TargetType="BoxView">
             <Setter Property="BackgroundColor" Value="BlueViolet"/>
@@ -31,7 +31,9 @@
             <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
             <Setter Property="BackgroundColor" Value="White"/>
             <Setter Property="VerticalOptions" Value="Center"/>
-            <Setter Property="WidthRequest" Value="180" />
+            <Setter Property="WidthRequest" Value="170" />
+            <Setter Property="HeightRequest" Value="45" />
+            <Setter Property="FontSize" Value="Subtitle"/>
         </Style>
         <Style x:Key="ImageButton" TargetType="controls:FlatIconButton">
             <Setter Property="BackgroundColor" Value="{x:Null}"/>
@@ -46,6 +48,9 @@
             <Setter Property="HorizontalOptions" Value="Start"/>
             <Setter Property="TextColor" Value="White"/>
             <Setter Property="BackgroundColor" Value="BlueViolet"/>
+            <Setter Property="WidthRequest" Value="100" />
+            <Setter Property="Margin" Value="-20,0,-10,0" />
+            <Setter Property="Padding" Value="-10,0,-10,0" />
         </Style>
     </ContentPage.Resources>
 
@@ -60,27 +65,27 @@
                 <RowDefinition Height="30"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="10"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="10"/>
             </Grid.ColumnDefinitions>
             <controls:NavPageTopBar Grid.Row="0" Grid.ColumnSpan="4"/>
             <!--<control:NavPageBarControl NavBarTitle="{Binding Textee}" NextNavBtnCommand="{Binding GotoPage2Command}" BackNavBtnCommand="{Binding ChangeText}" Grid.Row="0"/>-->
-            <Label Grid.Row="1" Grid.ColumnSpan="3" Text="{x:Static p:Resources.Settings_V_Main_Title}" FontSize="26" VerticalTextAlignment="Center" Margin="20,0,0,0"/>
+            <Label Grid.Row="1" Grid.ColumnSpan="3" Text="{x:Static p:Resources.Settings_V_Main_Title}" FontSize="Title" VerticalTextAlignment="Center" Margin="20,0,0,0"/>
             <Image Grid.Row="1" Grid.Column="3" Margin="0,0,-5,0" Source="Exit" TranslationX="-25">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding ExitSettings}"/>
                 </Image.GestureRecognizers>
             </Image>
-            <Grid Grid.Row="3" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="2" Margin="20" HorizontalOptions="Center" VerticalOptions="Start">
+            <Grid Grid.Row="3" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="Start">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="45"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="125"/>
+                    <ColumnDefinition Width="100"/>
                 </Grid.ColumnDefinitions>
                 <BoxView Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Style="{StaticResource BackGroundRectangle}"/>
                 <Label Grid.Column="0" Grid.Row="0" Text="{x:Static p:Resources.Settings_V_Language_TB}" Style="{StaticResource HeadingTextBlock}" />

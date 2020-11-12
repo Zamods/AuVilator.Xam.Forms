@@ -3,6 +3,17 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <PackageId>AuVilator</PackageId>
+    <Authors>Awais Akram</Authors>
+    <Product>AuVilator</Product>
+    <SignAssembly>false</SignAssembly>
+    <DelaySign>false</DelaySign>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Description>AuVilator helps to summarize the recorded meetings such that it can be evaluated at lesser time. Since, recorded meetings includes fair amount of non-essential auditory sounds like silence, machinery noise and more. Thus, AuVilator tries extracts human voice signals and merge them in respective manner so person can review the recorded meetings in lesser time. This way AuVilator can help user to summarize, evaluate and transcribe the recorded meetings in timely manner.
+</Description>
+    <Copyright>AuVilator 2020</Copyright>
+    <RepositoryUrl>https://github.com/Zamods/AuVilator.Xam.Forms</RepositoryUrl>
+    <PackageIcon>icon.png</PackageIcon>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -20,6 +31,10 @@
     <None Remove="Assets\NavBar\Exit.png" />
     <None Remove="Assets\NavBar\Front.png" />
     <None Remove="Assets\NavBar\Settings.png" />
+    <None Include="..\AuVilator.Xam.Forms.Android\Resources\mipmap-xhdpi\icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>

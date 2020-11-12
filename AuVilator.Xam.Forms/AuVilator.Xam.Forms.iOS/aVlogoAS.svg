@@ -17,9 +17,9 @@
    id="svg8"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
    sodipodi:docname="aVlogoAS.svg"
-   inkscape:export-filename="C:\Users\Awaiss.DESKTOP-M6EGNJ9\source\repos\AuVilator.Xam.Forms\AuVilator.Xam.Forms\AuVilator.Xam.Forms.Android\Resources\mipmap-xxxhdpi\icon.png"
-   inkscape:export-xdpi="57.396397"
-   inkscape:export-ydpi="57.396397"
+   inkscape:export-filename="C:\Users\Awaiss.DESKTOP-M6EGNJ9\source\repos\AuVilator.Xam.Forms\AuVilator.Xam.Forms\AuVilator.Xam.Forms.Android\Resources\mipmap-mdpi\icon.png"
+   inkscape:export-xdpi="12.190476"
+   inkscape:export-ydpi="12.190476"
    enable-background="new">
   <defs
      id="defs2">
@@ -62,9 +62,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.979899"
-     inkscape:cx="108.82061"
-     inkscape:cy="208.22951"
+     inkscape:zoom="1.5602204"
+     inkscape:cx="173.53562"
+     inkscape:cy="234.86875"
      inkscape:document-units="mm"
      inkscape:current-layer="layer2"
      showgrid="true"
@@ -103,7 +103,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -164,16 +164,20 @@
        x="7.5227485"
        y="7.5227485"
        ry="0" />
+    <path
+       style="opacity:1;fill:#fff656;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.46499979;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+       d="m 49.751275,7.5375243 v 6.1474287 2.633947 2.536796 c 0,3.405549 2.74188,6.147429 6.14743,6.147429 h 6.643521 23.360332 6.587193 V 7.5375243 H 85.902558 70.372755 55.898705 Z"
+       id="rect1412"
+       inkscape:connector-curvature="0" />
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer4"
      inkscape:label="Main"
-     style="display:inline"
-     sodipodi:insensitive="true">
+     style="display:inline">
     <g
        id="g843"
-       transform="matrix(0.61337759,0,0,0.63586344,-32.020843,-101.83478)">
+       transform="matrix(0.55123745,0,0,0.5714453,-23.710831,-86.452048)">
       <g
          id="g829"
          transform="matrix(6.1846354,0,0,6.1846354,55.562615,-1508.6853)">
@@ -196,18 +200,28 @@
            inkscape:connector-curvature="0" />
       </g>
     </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05555534px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="57.971272"
+       y="20.247343"
+       id="text1426"><tspan
+         sodipodi:role="line"
+         id="tspan1424"
+         x="57.971272"
+         y="20.247343"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.28888893px;font-family:'SF Pro Display';-inkscape-font-specification:'SF Pro Display';stroke-width:0.26458332">BETA</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer3"
      inkscape:label="Refelction"
-     style="display:none;opacity:1;filter:url(#filter1605)"
+     style="display:inline;opacity:1;filter:url(#filter1605)"
      sodipodi:insensitive="true">
     <path
-       style="display:inline;opacity:0.19599998;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:5.84375668;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
-       d="m 34.837891,344.07812 c 3.609463,3.38425 8.435718,5.49024 13.796875,5.49024 H 329.36523 c 11.19249,0 20.20313,-9.01064 20.20313,-20.20313 V 48.634766 c 0,-5.572663 -2.23873,-10.600008 -5.86328,-14.248047 z"
-       id="path3047"
-       inkscape:connector-curvature="0"
-       transform="scale(0.26458333)" />
+       style="display:inline;opacity:0.206;fill:#fdfaff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.5496434;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+       d="M 92.47454,92.474975 V 7.5375247 L 7.4955651,92.474975 Z"
+       id="rect2994-6"
+       inkscape:connector-curvature="0" />
   </g>
 </svg>
