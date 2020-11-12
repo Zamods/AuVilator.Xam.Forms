@@ -9,11 +9,11 @@ using Android.App;
 [assembly: AssemblyTitle("AuVilator.Xam.Forms.Android")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Awais Akram")]
 [assembly: AssemblyProduct("AuVilator.Xam.Forms.Android")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
+[assembly: AssemblyCulture("en")]
 [assembly: ComVisible(false)]
 
 // Version information for an assembly consists of the following four values:

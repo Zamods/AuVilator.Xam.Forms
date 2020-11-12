@@ -47,6 +47,11 @@
     <WarningLevel>4</WarningLevel>
     <AndroidManagedSymbols>true</AndroidManagedSymbols>
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <AndroidKeyStore>true</AndroidKeyStore>
+    <AndroidSigningKeyStore>C:\Users\Awaiss.DESKTOP-M6EGNJ9\Documents\Buffoon\KS</AndroidSigningKeyStore>
+    <AndroidSigningStorePass>Madina Total Print Works</AndroidSigningStorePass>
+    <AndroidSigningKeyAlias>auvilator</AndroidSigningKeyAlias>
+    <AndroidSigningKeyPass>Madina Total Print Works</AndroidSigningKeyPass>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
